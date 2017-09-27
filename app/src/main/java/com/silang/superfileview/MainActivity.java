@@ -82,16 +82,9 @@ public class MainActivity extends AppCompatActivity {
     private void initDatas() {
         datas.add("网络获取并打开doc文件");
         datas.add("打开本地doc文件");
-
-
         datas.add("打开本地txt文件");
-
         datas.add("打开本地excel文件");
-
-
         datas.add("打开本地ppt文件");
-
-
         datas.add("打开本地pdf文件");
     }
 
@@ -108,31 +101,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getFilePath(int position) {
-        String path = getStoragePath(this,false);
+        String path = null;
         switch (position) {
             case 0:
                 path = "http://www.hrssgz.gov.cn/bgxz/sydwrybgxz/201101/P020110110748901718161.doc";
                 break;
             case 1:
 
-                path = path +"/xiaomno.docx";
+                path = getStoragePath(this,false) +"/xiaomno.docx";
 
                 break;
 
 
             case 2:
-                path = path+"/test.txt";
+                path = getStoragePath(this,false)+"/test.txt";
                 break;
 
             case 3:
-                path = path+"/heihei.xlsx";
+                path = getStoragePath(this,false)+"/heihei.xlsx";
                 break;
             case 4:
-                path = path+"/pptx.pptx";
+                path = getStoragePath(this,false)+"/pptx.pptx";
                 break;
 
             case 5:
-                path = path+"/jin.pdf";
+                path = getStoragePath(this,false)+"/jin.pdf";
                 break;
         }
         return path;
